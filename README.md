@@ -1,5 +1,9 @@
 <div align="center">
-  <img alt="SignBridge Logo" src="https://github.com/user-attachments/assets/dbdf71e8-a56b-4e63-9ced-ccd12c6e044a" width="60%">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/47a88416-511e-404d-b8c5-69811edbccaf">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/dbdf71e8-a56b-4e63-9ced-ccd12c6e044a">
+    <img alt="SignBridge Logo" src="https://github.com/user-attachments/assets/dbdf71e8-a56b-4e63-9ced-ccd12c6e044a" width="55%">
+  </picture>
 </div>
 
 SignBridge is an web application designed to bridge the communication gap for hearing and speech-impaired individuals. The system processes hand gestures from a live webcam stream or uploaded video files, detects 3D positional hand landmarks, and translates sign language gestures into textual output in real time.
