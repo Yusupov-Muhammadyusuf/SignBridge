@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let stream = null;
     let isProcessing = false;
     let sendInterval = null;
+    let requestInProgress = false;
 
     async function startCamera() {
         try {
@@ -63,12 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         sendInterval = setInterval(async () => {
             if (!isProcessing || !videoFeed.videoWidth) return;
+            if (requestInProgress) return;
+
+            requestInProgress = true;
 
             tempCanvas.width = videoFeed.videoWidth;
             tempCanvas.height = videoFeed.videoHeight;
             tempCtx.drawImage(videoFeed, 0, 0, tempCanvas.width, tempCanvas.height);
 
-            const base64Image = tempCanvas.toDataURL('image/jpeg', 0.6);
+            const base64Image = tempCanvas.toDataURL('image/jpeg', 0.45);
 
             try {
                 const response = await fetch('/process_frame', {
@@ -98,8 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } catch (err) {
                 console.error("Frame processing error:", err);
+            } finally {
+                requestInProgress = false;
             }
-        }, 300);
+        }, 120);
     }
 
     videoUpload.addEventListener('change', (e) => {
