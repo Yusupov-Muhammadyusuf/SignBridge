@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="SignBridge Logo" src="https://github.com/user-attachments/assets/dbdf71e8-a56b-4e63-9ced-ccd12c6e044a" width="50%">
+  <img alt="SignBridge Logo" src="https://github.com/user-attachments/assets/dbdf71e8-a56b-4e63-9ced-ccd12c6e044a" width="65%">
 </div>
 
 SignBridge is an web application designed to bridge the communication gap for hearing and speech-impaired individuals. The system processes hand gestures from a live webcam stream or uploaded video files, detects 3D positional hand landmarks, and translates sign language gestures into textual output in real time.
@@ -40,6 +40,8 @@ The data pipeline follows a structured flow from input capture to inference rend
 
 ## Future Improvements
 
-- Add support for multi-hand sign language recognition.
-- Implement text-to-speech (TTS) output for two-way communication.
-- Optimize processing latency using WebSockets.
+- **Multi-Hand Tracking & Recognition:** Expand the computer vision pipeline to support concurrent tracking of multiple hands for complex sign language gestures and phrases.
+- **Text-to-Speech (TTS) Integration:** Implement client-side text-to-speech synthesis to convert translated text output into natural voice audio, enabling true two-way communication.
+- **WebSocket Protocol Integration:** Replace HTTP polling mechanisms with persistent WebSockets to drastically reduce latency and optimize real-time frame streaming performance.
+- **Expanded Vocabulary Database:** Train and integrate a more comprehensive lexicon of regional and international sign language dictionaries to improve translation accuracy.
+- **Offline Edge Processing:** Explore lightweight on-device model quantization to minimize server dependency and enhance overall execution speed.
